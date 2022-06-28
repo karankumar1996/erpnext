@@ -26,7 +26,13 @@ def get_custom_fields():
 				label="Hex Code",
 				fieldtype="Data",
 				insert_after="item_group",
-			)
+			),
+            dict(
+				fieldname="color_code",
+				label="Color Code",
+				fieldtype="Data",
+				insert_after="hex_code",
+			),
 		]
 		
 	}
