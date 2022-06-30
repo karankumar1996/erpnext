@@ -94,7 +94,6 @@ def get_custom_fields():
 				insert_after= "customer_name",
 				name="Quotation-ntn",
 				read_only=1,
-				depends_on='eval: in_list(["Customer"], doc.quotation_to)'
 			),
             dict(
                 dt="Quotation",
@@ -105,8 +104,7 @@ def get_custom_fields():
 				fieldtype="Data",
 				insert_after= "ntn",
 				name="Quotation-strn",
-				read_only=1,
-    			depends_on='eval: in_list(["Customer"], doc.quotation_to)'
+				read_only=1,	
 			),
             dict(
                 dt="Quotation",
@@ -118,7 +116,6 @@ def get_custom_fields():
 				insert_after= "strn",
 				name="Quotation-cnic",
 				read_only=1,
-    			depends_on='eval: in_list(["Customer"], doc.quotation_to)'
 			),
             dict(
                 dt="Purchase Order",
