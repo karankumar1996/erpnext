@@ -49,38 +49,38 @@ def get_custom_fields():
 		# ],
 		"Item":	[
 			dict(
-				fieldname="pct_code",
-				label="PCT Code",
+				fieldname="dct_code",
+				label="DCT Code",
 				fieldtype="Data",
 				insert_after="item_group",
 			),
 		],
-		"Supplier":[
-			dict(
-				bold=1,
-				fieldname="ntn",
-				label="NTN",
-				fieldtype="Data",
-				insert_after= "tax_id",
-				name="Supplier-ntn",
-			),
-			dict(
-				bold=1,
-				fieldname="strn",
-				label="STRN",
-				fieldtype="Data",
-				insert_after= "ntn",
-				name="Supplier-strn",
-			),
-			dict(
-				bold=1,
-				fieldname="cnic",
-				label="CNIC",
-				fieldtype="Data",
-				insert_after= "strn",
-				name="Supplier-cnic",
-			),
-		],
+		# "Supplier":[
+		# 	dict(
+		# 		bold=1,
+		# 		fieldname="ntn",
+		# 		label="NTN",
+		# 		fieldtype="Data",
+		# 		insert_after= "tax_id",
+		# 		name="Supplier-ntn",
+		# 	),
+		# 	dict(
+		# 		bold=1,
+		# 		fieldname="strn",
+		# 		label="STRN",
+		# 		fieldtype="Data",
+		# 		insert_after= "ntn",
+		# 		name="Supplier-strn",
+		# 	),
+		# 	dict(
+		# 		bold=1,
+		# 		fieldname="cnic",
+		# 		label="CNIC",
+		# 		fieldtype="Data",
+		# 		insert_after= "strn",
+		# 		name="Supplier-cnic",
+		# 	),
+		# ],
 		# "Quotation":[
 		# 	dict(
 		# 		dt="Quotation",
