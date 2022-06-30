@@ -24,7 +24,6 @@ def get_custom_fields():
 	custom_fields = {
 		"Company": [
 			dict(
-                dt="Company",
                 bold=1,
 				fieldname="ntn",
 				label="NTN",
@@ -33,7 +32,6 @@ def get_custom_fields():
 				name="Company-ntn",
 			),
             dict(
-                dt="Company",
                 bold=1,
 				fieldname="strn",
 				label="STRN",
@@ -42,7 +40,6 @@ def get_custom_fields():
 				name="Company-strn",
 			),
             dict(
-                dt="Company",
                 bold=1,
 				fieldname="cnic",
 				label="CNIC",
