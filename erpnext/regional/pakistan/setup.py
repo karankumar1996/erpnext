@@ -24,13 +24,6 @@ def get_custom_fields():
 	custom_fields = {
 		"Item": [
 			dict(
-				dt="Item",
-				fieldname="pct_code",
-				label="PCT Code",
-				fieldtype="Data",
-				insert_after="item_group",
-			),
-            dict(
                 dt="Company",
                 bold=1,
 				fieldname="ntn",
@@ -56,6 +49,13 @@ def get_custom_fields():
 				fieldtype="Data",
 				insert_after= "strn",
 				name="Company-cnic",
+			),
+			dict(
+				dt="Item",
+				fieldname="pct_code",
+				label="PCT Code",
+				fieldtype="Data",
+				insert_after="item_group",
 			),
             dict(
                 dt="Supplier",
@@ -83,6 +83,42 @@ def get_custom_fields():
 				fieldtype="Data",
 				insert_after= "strn",
 				name="Supplier-cnic",
+			),
+            dict(
+                dt="Quotation",
+                fetch_from= "party_name.ntn",
+                bold=1,
+				fieldname="ntn",
+				label="NTN",
+				fieldtype="Data",
+				insert_after= "customer_name",
+				name="Quotation-ntn",
+				read_only=1,
+				depends_on='eval: in_list(["Customer"], doc.quotation_to)'
+			),
+            dict(
+                dt="Quotation",
+                fetch_from= "party_name.strn",
+                bold=1,
+				fieldname="strn",
+				label="STRN",
+				fieldtype="Data",
+				insert_after= "ntn",
+				name="Quotation-strn",
+				read_only=1,
+    			depends_on='eval: in_list(["Customer"], doc.quotation_to)'
+			),
+            dict(
+                dt="Quotation",
+                fetch_from= "party_name.cnic",
+                bold=1,
+				fieldname="cnic",
+				label="CNIC",
+				fieldtype="Data",
+				insert_after= "strn",
+				name="Quotation-cnic",
+				read_only=1,
+    			depends_on='eval: in_list(["Customer"], doc.quotation_to)'
 			),
             dict(
                 dt="Purchase Order",
@@ -117,7 +153,7 @@ def get_custom_fields():
 				name="Purchase Order-cnic",
 				read_only=1,
 			),
-             dict(
+			dict(
                 dt="Purchase Receipt",
                 fetch_from="supplier.ntn",
                 bold=1,
@@ -148,27 +184,6 @@ def get_custom_fields():
 				fieldtype="Data",
 				insert_after= "strn",
 				name="Purchase Receipt-cnic",
-				read_only=1,
-			),
-            dict(
-                dt="Purchase Order Item",
-                fetch_from="item_code.pct_code",
-                bold=1,
-				fieldname="pct_code",
-				label="PCT Code",
-				fieldtype="Data",
-				insert_after= "item_name",
-				name="Purchase Order Item-pct_code",
-			),
-            dict(
-                dt="Purchase Receipt Item",
-                fetch_from="item_code.pct_code",
-                bold=1,
-				fieldname="pct_code",
-				label="PCT Code",
-				fieldtype="Data",
-				insert_after= "item_name",
-				name="Purchase Receipt Item-pct_code",
 				read_only=1,
 			),
             dict(
@@ -205,6 +220,27 @@ def get_custom_fields():
 				read_only=1,
 			),
             dict(
+                dt="Purchase Order Item",
+                fetch_from="item_code.pct_code",
+                bold=1,
+				fieldname="pct_code",
+				label="PCT Code",
+				fieldtype="Data",
+				insert_after= "item_name",
+				name="Purchase Order Item-pct_code",
+			),
+            dict(
+                dt="Purchase Receipt Item",
+                fetch_from="item_code.pct_code",
+                bold=1,
+				fieldname="pct_code",
+				label="PCT Code",
+				fieldtype="Data",
+				insert_after= "item_name",
+				name="Purchase Receipt Item-pct_code",
+				read_only=1,
+			),
+            dict(
                 dt="Purchase Invoice Item",
                 fetch_from="item_code.pct_code",
                 bold=1,
@@ -215,7 +251,7 @@ def get_custom_fields():
 				name="Purchase Invoice Item-pct_code",
 				read_only=1,
 			),
-			 dict(
+			dict(
                 dt="Customer",
                 bold=1,
 				fieldname="ntn",
