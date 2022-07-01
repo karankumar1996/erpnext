@@ -414,7 +414,33 @@ def get_custom_fields():
 				insert_after= "item_name",
 				name="Sales Invoice Item-pct_code",
 			),
-		]
+		],
+		"Company": [
+			dict(
+				bold=1,
+				fieldname="ntn",
+				label="NTN",
+				fieldtype="Data",
+				insert_after= "tax_id",
+				name="Company-ntn",
+			),
+			dict(
+				bold=1,
+				fieldname="strn",
+				label="STRN",
+				fieldtype="Data",
+				insert_after= "ntn",
+				name="Company-strn",
+			),
+			dict(
+				bold=1,
+				fieldname="cnic",
+				label="CNIC",
+				fieldtype="Data",
+				insert_after= "strn",
+				name="Company-cnic",
+			),
+		],
  	}
 
 	return custom_fields
