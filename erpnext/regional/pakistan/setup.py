@@ -54,6 +54,41 @@ def get_custom_fields():
 				name="Supplier-cnic",
 			),
 		],
+		"Quotation":[
+			dict(
+				fetch_from= "party_name.ntn",
+				bold=1,
+				fieldname="ntn",
+				label="NTN",
+				fieldtype="Data",
+				insert_after= "customer_name",
+				name="Quotation-ntn",
+				read_only=1,
+				depends_on='eval: in_list(["Customer"], doc.quotation_to)',
+			),
+			dict(
+				fetch_from= "party_name.strn",
+				bold=1,
+				fieldname="strn",
+				label="STRN",
+				fieldtype="Data",
+				insert_after= "ntn",
+				name="Quotation-strn",
+				read_only=1,
+				depends_on='eval: in_list(["Customer"], doc.quotation_to)',
+			),
+			dict(
+				fetch_from= "party_name.cnic",
+				bold=1,
+				fieldname="cnic",
+				label="CNIC",
+				fieldtype="Data",
+				insert_after= "strn",
+				name="Quotation-cnic",
+				read_only=1,
+				depends_on='eval: in_list(["Customer"], doc.quotation_to)',
+			),
+		],
  	}
 
 	return custom_fields
