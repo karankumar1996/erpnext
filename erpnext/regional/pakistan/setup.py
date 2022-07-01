@@ -20,15 +20,14 @@ def make_custom_fields(update=True):
 def get_custom_fields():
 
 	custom_fields = {
-		"Item": [
+		"Item":	[
 			dict(
-				fieldname="hex_code",
-				label="Hex Code",
+				fieldname="pct_code",
+				label="PCT Code",
 				fieldtype="Data",
 				insert_after="item_group",
-			)
-		]
-
-	}
+			),
+		],
+ 	}
 
 	return custom_fields
