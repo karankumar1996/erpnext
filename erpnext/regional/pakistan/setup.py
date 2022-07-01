@@ -89,6 +89,18 @@ def get_custom_fields():
 				depends_on='eval: in_list(["Customer"], doc.quotation_to)',
 			),
 		],
+		"Quotation Item": [
+			  dict(
+				fetch_from="item_code.pct_code",
+				bold=1,
+				fieldname="pct_code",
+				label="PCT Code",
+				fieldtype="Data",
+				insert_after= "item_name",
+				name="Quotation Item-pct_code",
+				read_only=1,
+			),
+		],
  	}
 
 	return custom_fields
