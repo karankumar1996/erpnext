@@ -204,7 +204,7 @@ def get_custom_fields():
 				read_only=1,
 			),
 		],
-		"Purcahse Order Item":[
+		"Purchase Order Item":[
 			dict(
 				dt="Purchase Order Item",
 				fetch_from="item_code.pct_code",
@@ -214,9 +214,10 @@ def get_custom_fields():
 				fieldtype="Data",
 				insert_after= "item_name",
 				name="Purchase Order Item-pct_code",
+    			read_only=1,
 			),
 		],
-		"Purcahse Receipt Item":[
+		"Purchase Receipt Item":[
 			dict(
 				dt="Purchase Receipt Item",
 				fetch_from="item_code.pct_code",
@@ -229,7 +230,7 @@ def get_custom_fields():
 				read_only=1,
 			),
 		],
-		"Purcahse Invoice Item":[
+		"Purchase Invoice Item":[
 			dict(
 				dt="Purchase Invoice Item",
 				fetch_from="item_code.pct_code",
@@ -413,6 +414,7 @@ def get_custom_fields():
 				fieldtype="Data",
 				insert_after= "item_name",
 				name="Sales Invoice Item-pct_code",
+				read_only=1,
 			),
 		],
 		"Company": [
